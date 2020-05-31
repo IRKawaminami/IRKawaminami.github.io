@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kawaminami Sensei</title>
-    <link rel="icon" type="image/png" href="imagenes/favicon.png">
-    <link rel="stylesheet" href="Portafolio.css">
+    <link rel="icon" type="image/png" href="imagenes/favicon.png"/>
+    <link rel="stylesheet" href="Portafolio.css"/>
+    
+    <link name="viewport" content="device-width, initial-scale=1"/>
+    
 </head>
 <body>
     <header class="header">
+        <i class="icon-menu" id="burger"></i>
         <figure class="logo">
             <img  src="imagenes/logo_invertido.jpg" alt="Logo">
         </figure>
-        <nav class="menu">
+        <nav class="menu" id="menu">
             <ol>
                 <li>
                     <a class="link" href="#Portafolio">Portafolio</a>
@@ -30,9 +34,9 @@
         <h1>¡Hola! Soy <strong>Iván Kawaminami</strong><br/>
         Ingeniero en <strong>mecatrónica</strong><br/>
         Con maestría en ciencias de la <strong>computación</strong><br/>
-        Profesor apasionado por la <strong>eduación</strong><br/>
+        Profesor apasionado por la <strong>educación</strong><br/>
         Bienvenido a mi <strong>ciberespacio</strong></h1>
-    </section>
+    </section> 
     <div class="separador" id="Portafolio"><h2>Publicaciones</h2></div>
     <div class="portafolio">
         <section class="publicacion">
@@ -90,6 +94,26 @@
             <p>Portafolio 2020</p>
         </div>
     </footer>
-    
+    <script>
+        const menu = document.querySelector("#menu");
+        const burger = document.querySelector("#burger");
+        const ipad = window.matchMedia("screen and (max-width: 480px)");
+        console.log(ipad);
+        ipad.addListener(validation);
+        function validation(event){
+            if(event.matches){
+                burger.addEventListener("click", hideShow)
+            }else{
+                burger.removeEventListener("click", hideShow)
+            }
+        }
+            function hideShow() {
+                if (menu.classList.contains("activo")){
+                menu.classList.remove("activo");
+                }else {
+                menu.classList.add("activo");
+                }
+            }
+    </script>
 </body>
 </html>
