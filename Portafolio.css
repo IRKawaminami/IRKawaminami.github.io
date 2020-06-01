@@ -352,6 +352,15 @@ h5{
             display: flex;
             justify-content: center;
       }
+      .email input{
+            border-color: gray;
+            border-style: solid;
+            border-radius: 5px;
+            padding: 0px 20px 0px 25px;
+            background-image: none;
+            background-size: 10px 10px;
+            
+      }
       h5{
             text-align: center;
       }
